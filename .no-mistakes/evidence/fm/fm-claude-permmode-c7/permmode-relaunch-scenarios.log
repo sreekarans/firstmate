@@ -1,0 +1,17 @@
+### relaunch under auto
+$ fm-spawn.sh pm1 --relaunch
+warning: /private/var/folders/1_/77s4r8sx5bn91xjw34h79bdw0000gr/T/fm-control-relaunch.wM1SA6/permmode-relaunch-19165/home/data/pm1/launch-brief.md records no delivery contract line (scaffolded before ship briefs recorded one); launching on the explicit --mode no-mistakes - confirm its definition of done matches
+spawned pm1 harness=claude kind=ship mode=no-mistakes yolo=off window=fmses:fm-pm1 worktree=/private/var/folders/1_/77s4r8sx5bn91xjw34h79bdw0000gr/T/fm-control-relaunch.wM1SA6/permmode-relaunch-19165/wt
+exit=0
+literal sent to pane:
+unset TRACEPARENT; env -u CURSOR_AGENT -u CURSOR_INVOKED_AS -u GEMINI_CLI CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=false CLAUDE_CODE_SEND_FEEDBACK=0 claude --permission-mode auto --settings '{"feedbackDrafts":"off","attribution":{"commit":"","pr":"","sessionUrl":false}}' "$('/Users/sreekaran/.no-mistakes/worktrees/3ddca7921a48/01M2920258JDBZ60BZ8MNNHQK2/bin/fm-operational-input.sh' encode launch-brief < '/private/var/folders/1_/77s4r8sx5bn91xjw34h79bdw0000gr/T/fm-control-relaunch.wM1SA6/permmode-relaunch-19165/home/data/pm1/launch-brief.md')"
+
+ok - config/claude-permission-mode=auto reaches a relaunch of an existing claude task
+### relaunch under invalid token
+$ fm-spawn.sh pm2 --relaunch
+error: config/claude-permission-mode holds 'yolo'; accepted values are: bypass (--dangerously-skip-permissions, the default when the file is absent), auto (--permission-mode auto)
+exit=1
+literal-bytes=0
+
+ok - an invalid token refuses a relaunch before touching the pane or the record
+# all relaunch permission-mode scenarios passed
